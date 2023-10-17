@@ -1,6 +1,8 @@
 import { useLoaderData } from 'react-router-dom';
 import Banner from '../components/Banner';
 import BrandCard from '../components/BrandCard';
+import OurPrices from '../components/OurPrices';
+import Newsletter from '../components/Newsletter';
 
 const Home = () => {
   const brands = useLoaderData();
@@ -9,7 +11,7 @@ const Home = () => {
     <div>
       <Banner></Banner>
       {/* our brands */}
-      <div className="mt-10">
+      <div className="my-10">
         <h2 className="text-4xl font-semibold text-error text-center mb-10">
           Our Featured Brands
         </h2>
@@ -19,6 +21,10 @@ const Home = () => {
           ))}
         </div>
       </div>
+      {/* our prices */}
+      <OurPrices></OurPrices>
+      {/* our newsletter */}
+      <Newsletter></Newsletter>
     </div>
   );
 };
