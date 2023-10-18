@@ -1,7 +1,7 @@
 const Newsletter = () => {
   return (
     <div className="my-10">
-      <div className="relative rounded-t-md isolate overflow-hidden bg-transparent py-16 sm:py-24">
+      <div className="relative rounded-t-md isolate overflow-hidden bg-error py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
             <div className="max-w-xl lg:max-w-lg">

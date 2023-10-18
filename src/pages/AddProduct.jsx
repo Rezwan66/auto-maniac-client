@@ -167,7 +167,7 @@ const AddProduct = () => {
                 </div>
                 {/* add product btn */}
                 <div className="form-control mt-6 col-span-3">
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" className="btn btn-accent">
                     Add Product
                   </button>
                 </div>

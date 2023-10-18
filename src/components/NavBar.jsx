@@ -2,6 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { useContext } from 'react';
 import Swal from 'sweetalert2';
+import logo from '../assets/logo.png';
 
 const NavBar = () => {
   const { user, logoutUser } = useContext(AuthContext);
@@ -103,7 +104,7 @@ const NavBar = () => {
           </div>
 
           <div className="border-2 border-error rounded-xl bg-base-100">
-            <img className="w-36 h-full" src="./logo.png" alt="" />
+            <img className="w-36 h-full" src={logo} alt="" />
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
