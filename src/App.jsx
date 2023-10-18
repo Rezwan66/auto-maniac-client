@@ -6,17 +6,17 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
-      {/* <div
+      <div
         className="min-h-screen bg-no-repeat bg-cover"
         style={{ backgroundImage: 'url(/cool-background.png)' }}
       >
-        
-      </div> */}
-      <div className="max-w-[1440px] mx-auto">
-        <NavBar></NavBar>
-        <Outlet></Outlet>
+        <div className="max-w-[1440px] min-h-screen mx-auto">
+          <NavBar></NavBar>
+          <Outlet></Outlet>
+        </div>
+        <Footer></Footer>
       </div>
-      <Footer></Footer>
+      <div className=""></div>
     </>
   );
 }
