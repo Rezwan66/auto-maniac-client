@@ -2,12 +2,39 @@ import { useContext } from 'react';
 import { FaDollarSign } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const ProductDetails = () => {
   const { user } = useContext(AuthContext);
   const product = useLoaderData();
-  const { _id, image, name, brand, type, price, description } = product || {};
-  console.log(product, user.email);
+  const { image, name, brand, type, price, description } = product || {};
+  //   console.log(product, user.email);
+  const { email } = user;
+
+  const handleAddToCart = () => {
+    const userProduct = { ...product, email };
+    console.log(userProduct);
+    fetch('http://localhost:5000/cartProducts', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(userProduct),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: 'Awesome!',
+            text: 'Product Added to Cart!',
+            icon: 'success',
+            confirmButtonText: 'Cool',
+          });
+        }
+      });
+  };
+
   return (
     <div className="flex justify-center my-10">
       <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row lg:min-w-[750px] hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-6">
@@ -33,7 +60,9 @@ const ProductDetails = () => {
               <i>{description}</i>
             </p>
             <div>
-              <button className="btn btn-accent">Add to Cart</button>
+              <button onClick={handleAddToCart} className="btn btn-accent">
+                Add to Cart
+              </button>
             </div>
           </div>
           <div>
