@@ -13,6 +13,7 @@ import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
+import EditProduct from './pages/EditProduct.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,16 @@ const router = createBrowserRouter([
             <AddProduct></AddProduct>
           </PrivateRoute>
         ),
+      },
+      {
+        path: '/edit/:id',
+        element: (
+          <PrivateRoute>
+            <EditProduct></EditProduct>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/product/${params.id}`),
       },
       {
         path: '/cart',

@@ -39,7 +39,9 @@ const ProductCard = ({ product }) => {
             <Link to={`/product/${_id}`}>
               <button className="btn btn-info">Details</button>
             </Link>
-            <button className="btn btn-success">Update</button>
+            <Link to={`/edit/${_id}`}>
+              <button className="btn btn-success">Update</button>
+            </Link>
           </div>
           <div className="card-actions justify-center"></div>
         </div>
