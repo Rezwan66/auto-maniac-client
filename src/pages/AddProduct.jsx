@@ -57,26 +57,48 @@ const AddProduct = () => {
                   <label className="label">
                     <span className="label-text">Brand</span>
                   </label>
-                  <input
-                    type="text"
+                  <select
+                    required
                     name="brand"
                     placeholder="Brand name"
                     className="input input-bordered"
-                    required
-                  />
+                    defaultValue=""
+                  >
+                    <option value="" disabled hidden>
+                      Select a brand
+                    </option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Ford">Ford</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Mercedes">Mercedes</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="Honda">Honda</option>
+                  </select>
                 </div>
                 {/* type */}
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Type</span>
                   </label>
-                  <input
-                    type="text"
+                  <select
+                    required
                     name="type"
                     placeholder="Type of product"
                     className="input input-bordered"
-                    required
-                  />
+                    defaultValue=""
+                  >
+                    <option value="" disabled hidden>
+                      Select a type
+                    </option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Sports Car">Sports Car</option>
+                    <option value="Electric Vehicle (EV)">
+                      Electric Vehicle (EV)
+                    </option>
+                  </select>
                 </div>
                 {/* price */}
                 <div className="form-control">
@@ -94,10 +116,13 @@ const AddProduct = () => {
                 {/* rating */}
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Rating</span>
+                    <span className="label-text">Rating (1-5)</span>
                   </label>
                   <input
-                    type="text"
+                    type="number"
+                    min="1"
+                    max="5"
+                    step="0.1"
                     name="rating"
                     placeholder="Rating"
                     className="input input-bordered"
@@ -117,6 +142,7 @@ const AddProduct = () => {
                     required
                   />
                 </div>
+                {/* add product btn */}
                 <div className="form-control mt-6 col-span-3">
                   <button type="submit" className="btn btn-primary">
                     Add Product
