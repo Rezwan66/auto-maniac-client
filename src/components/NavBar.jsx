@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 
 const NavBar = () => {
   const { user, logoutUser } = useContext(AuthContext);
+
   const navLinks = (
     <>
       <li>

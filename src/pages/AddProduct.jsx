@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 const AddProduct = () => {
   const handleAddProduct = e => {
     e.preventDefault();
@@ -9,10 +11,31 @@ const AddProduct = () => {
     const price = form.price.value;
     const rating = form.rating.value;
     const description = form.description.value;
-    console.log(image, name, brand, type, price, rating, description);
+    const product = { image, name, brand, type, price, rating, description };
+    console.log(product);
+    fetch('http://localhost:5000/products', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(product),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: 'Awesome!',
+            text: 'Added product successfully!',
+            icon: 'success',
+            confirmButtonText: 'Cool',
+          });
+          form.reset();
+        }
+      });
   };
   return (
-    <div>
+    <div className="my-10 pb-10">
       <div>
         <div className="hero bg-transparent">
           <div className="hero-content flex-col">

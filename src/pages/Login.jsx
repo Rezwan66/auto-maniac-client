@@ -93,7 +93,7 @@ const Login = () => {
                     Not a member?{' '}
                     <Link
                       to="/register"
-                      className="text-primary text-base font-bold hover:text-white"
+                      className="text-primary text-base font-bold hover:text-secondary"
                     >
                       Register
                     </Link>
