@@ -12,7 +12,7 @@ const PrivateRoute = ({ children }) => {
       <div className="text-center mt-20">
         <span className="loading w-20 loading-spinner text-success"></span>
         <span className="loading w-20 loading-spinner text-warning"></span>
-        <span className="loading w-20 loading-spinner text-error"></span>
+        <span className="loading w-20 loading-spinner text-secondary"></span>
       </div>
     );
   }

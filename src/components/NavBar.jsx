@@ -1,6 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
+import { useContext } from 'react';
+import Swal from 'sweetalert2';
 
 const NavBar = () => {
+  const { user, logoutUser } = useContext(AuthContext);
   const navLinks = (
     <>
       <li>
@@ -47,6 +51,27 @@ const NavBar = () => {
       </li>
     </>
   );
+
+  const handleLogout = () => {
+    logoutUser()
+      .then(() => {
+        Swal.fire({
+          title: 'Awesome!',
+          text: 'Logged Out successfully!',
+          icon: 'success',
+          confirmButtonText: 'Cool',
+        });
+      })
+      .catch(error =>
+        Swal.fire({
+          title: 'Error!',
+          text: error.message,
+          icon: 'error',
+          confirmButtonText: 'Cool',
+        })
+      );
+  };
+
   return (
     <div>
       <div className="navbar bg-transparent lg:px-0">
@@ -86,7 +111,28 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn btn-error capitalize text-white">Login</a>
+          <div>
+            {user ? (
+              <div className="flex flex-col md:flex-row items-center gap-2">
+                <div className="flex items-center gap-2">
+                  <div className="avatar ">
+                    <div className="w-5 h-5 md:w-10 md:h-10 rounded-full">
+                      <img src={user?.photoURL} />
+                    </div>
+                  </div>
+                  <p>{user?.displayName}</p>
+                </div>
+
+                <button onClick={handleLogout} className="btn btn-secondary">
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <Link to="/login" className="btn btn-error text-white">
+                Login
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </div>
