@@ -19,7 +19,7 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  // observe user
+  // spy for user
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser);
@@ -28,7 +28,6 @@ const AuthProvider = ({ children }) => {
 
     return () => unSubscribe();
   }, []);
-  //   console.log(user);
 
   // create user with email & password
   const createUser = (email, password) => {

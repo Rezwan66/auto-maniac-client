@@ -10,6 +10,7 @@ import BrandProducts from './pages/BrandProducts.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -41,10 +42,10 @@ const router = createBrowserRouter([
         path: '/login',
         element: <Login></Login>,
       },
-      // {
-      //   path: '/register',
-      //   element: <Register></Register>,
-      // },
+      {
+        path: '/register',
+        element: <Register></Register>,
+      },
     ],
   },
 ]);
