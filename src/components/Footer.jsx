@@ -1,9 +1,11 @@
+import logo from '../assets/logo.png';
+
 const Footer = () => {
   return (
     <div>
       <footer className="footer footer-center p-10 bg-neutral text-primary-content">
         <aside>
-          <img className="w-36" src="./logo.png" alt="" />
+          <img className="w-36" src={logo} alt="" />
           <p className="font-bold text-lg text-error">
             <i>Your go to car expert!</i>
           </p>

@@ -12,6 +12,7 @@ import PrivateRoute from './routes/PrivateRoute.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
+import ProductDetails from './pages/ProductDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,16 @@ const router = createBrowserRouter([
         element: <BrandProducts></BrandProducts>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.name}`),
+      },
+      {
+        path: '/product/:id',
+        element: (
+          <PrivateRoute>
+            <ProductDetails></ProductDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/product/${params.id}`),
       },
       {
         path: '/login',

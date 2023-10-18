@@ -7,9 +7,15 @@ const BrandProducts = () => {
   const { name } = useParams();
   console.log(name, products);
   return (
-    <div>
-      <h2>products {products.length}</h2>
+    <div className="my-10">
       <ProductSlider></ProductSlider>
+      <h2 className="my-10 text-sm text-right">
+        <i>
+          Showing {products.length}{' '}
+          {products.length === 1 ? 'Product' : 'Products'}
+        </i>
+      </h2>
+
       {products.length ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {products?.map(product => (
