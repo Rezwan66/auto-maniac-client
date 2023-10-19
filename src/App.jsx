@@ -12,7 +12,7 @@ function App() {
     <>
       {/* <div
         className="min-h-screen bg-no-repeat bg-cover"
-        style={{ backgroundImage: 'url(/cool-background.png)' }}
+        style={{ backgroundImage: 'url(/light.svg)' }}
       ></div> */}
       <div className="">
         {/* <DarkModeSwitch
@@ -20,12 +20,12 @@ function App() {
           onChange={toggleDarkMode}
           size={50}
         /> */}
-        <div className="max-w-[1440px] min-h-screen mx-auto">
-          <NavBar></NavBar>
-          <Outlet></Outlet>
-        </div>
-        <Footer></Footer>
       </div>
+      <div className="max-w-[1440px] min-h-screen mx-auto">
+        <NavBar></NavBar>
+        <Outlet></Outlet>
+      </div>
+      <Footer></Footer>
     </>
   );
 }

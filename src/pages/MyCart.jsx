@@ -1,8 +1,17 @@
 import { useLoaderData } from 'react-router-dom';
 import CartProductCard from '../components/CartProductCard';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../providers/AuthProvider';
 
 const MyCart = () => {
-  const cartProducts = useLoaderData();
+  const { user } = useContext(AuthContext);
+  const currentUserEmail = user.email;
+  console.log(currentUserEmail);
+  const loadedCartProducts = useLoaderData();
+  const currentUserCart = loadedCartProducts.filter(
+    product => product.email === currentUserEmail
+  );
+  const [cartProducts, setCartProducts] = useState(currentUserCart);
   console.log(cartProducts);
   // subtotal calculation
   let subtotal = 0;
@@ -21,6 +30,8 @@ const MyCart = () => {
               <CartProductCard
                 key={product._id}
                 product={product}
+                cartProducts={cartProducts}
+                setCartProducts={setCartProducts}
               ></CartProductCard>
             ))}
           </div>

@@ -5,3 +5,28 @@
 /* text-align: center; */
 /* border: 2px solid red; */
 /* } */
+
+:root {
+  --my-color: #fff;
+  --my-text: #000;
+  /* or any other variables/style */
+}
+[data-theme='dark'] {
+  --my-color: #000;
+  --my-text: #fff;
+}
+[data-theme='pink'] {
+  --my-color: #ffabc8;
+}
+
+body {
+  /* background-color: var(--my-color);
+  color: var(--my-text); */
+  background-color: white;
+  color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}

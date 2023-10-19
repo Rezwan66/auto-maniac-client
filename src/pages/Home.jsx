@@ -8,6 +8,7 @@ import OurStats from '../components/OurStats';
 const Home = () => {
   const brands = useLoaderData();
   console.log(brands);
+
   return (
     <div>
       <Banner></Banner>

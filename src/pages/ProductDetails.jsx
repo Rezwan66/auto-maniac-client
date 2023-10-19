@@ -7,12 +7,23 @@ import Swal from 'sweetalert2';
 const ProductDetails = () => {
   const { user } = useContext(AuthContext);
   const product = useLoaderData();
-  const { image, name, brand, type, price, description } = product || {};
+  const { image, name, brand, type, price, description, rating } =
+    product || {};
   //   console.log(product, user.email);
   const { email } = user;
+  console.log(email);
 
   const handleAddToCart = () => {
-    const userProduct = { ...product, email };
+    const userProduct = {
+      email: user.email,
+      image,
+      name,
+      brand,
+      type,
+      price,
+      description,
+      rating,
+    };
     console.log(userProduct);
     fetch('http://localhost:5000/cartProducts', {
       method: 'POST',

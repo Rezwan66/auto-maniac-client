@@ -1,11 +1,26 @@
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
 import logo from '../assets/logo.png';
+import { useEffect } from 'react';
+import { themeChange } from 'theme-change';
 
 const NavBar = () => {
   const { user, logoutUser } = useContext(AuthContext);
+  const [dark, setDark] = useState(false);
+  console.log(dark);
+
+  const handleToggleTheme = () => {
+    const element = document.body;
+    element.classList.toggle('dark-mode');
+    setDark(!dark);
+  };
+
+  useEffect(() => {
+    themeChange(false);
+    // 👆 false parameter is required for react project
+  }, []);
 
   const navLinks = (
     <>
@@ -105,6 +120,20 @@ const NavBar = () => {
 
           <div className="border-2 border-error rounded-xl bg-base-100">
             <img className="w-36 h-full" src={logo} alt="" />
+          </div>
+          <div>
+            {/* <button
+              onClick={() => {
+                setDark(!dark);
+              }}
+              data-toggle-theme="dark,light"
+              data-act-class="ACTIVECLASS"
+            >
+              {dark ? 'dark' : 'light'}
+            </button> */}
+            <button onClick={handleToggleTheme}>
+              {dark ? 'Light' : 'Dark'}
+            </button>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">

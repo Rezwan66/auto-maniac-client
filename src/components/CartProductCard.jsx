@@ -1,9 +1,39 @@
 import { FaDollarSign } from 'react-icons/fa';
 import PropTypes from 'prop-types';
+import Swal from 'sweetalert2';
 
-const CartProductCard = ({ product }) => {
+const CartProductCard = ({ product, cartProducts, setCartProducts }) => {
   const { _id, email, image, name, brand, type, price, rating, description } =
     product || {};
+
+  const handleDelete = _id => {
+    console.log(_id);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then(result => {
+      if (result.isConfirmed) {
+        // Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+        fetch(`http://localhost:5000/cartProducts/${_id}`, {
+          method: 'DELETE',
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+              const remaining = cartProducts.filter(p => p._id !== _id);
+              setCartProducts(remaining);
+            }
+          });
+      }
+    });
+  };
 
   return (
     <div>
@@ -27,7 +57,10 @@ const CartProductCard = ({ product }) => {
                 <FaDollarSign></FaDollarSign>
                 {price}
               </p>
-              <button className="btn btn-ghost">
+              <button
+                onClick={() => handleDelete(_id)}
+                className="btn btn-ghost"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
