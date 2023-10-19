@@ -67,25 +67,25 @@ const Login = () => {
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text text-error">Email</span>
                 </label>
                 <input
                   type="email"
                   name="email"
                   placeholder="Your email"
-                  className="input input-bordered"
+                  className="input input-bordered text-gray-900"
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-white">Password</span>
+                  <span className="label-text text-error">Password</span>
                 </label>
                 <input
                   type="password"
                   name="password"
                   placeholder="Your password"
-                  className="input input-bordered"
+                  className="input input-bordered text-gray-900"
                   required
                 />
                 <label className="mt-4 text-right text-sm">

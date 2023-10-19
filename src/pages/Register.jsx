@@ -90,49 +90,49 @@ const Register = () => {
             <form onSubmit={handleRegister} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Full Name</span>
+                  <span className="label-text text-error">Full Name</span>
                 </label>
                 <input
                   type="text"
                   name="name"
                   placeholder="Your full name"
-                  className="input input-bordered"
+                  className="input input-bordered text-gray-900"
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Photo URL</span>
+                  <span className="label-text text-error">Photo URL</span>
                 </label>
                 <input
                   type="text"
                   name="photo"
                   placeholder="Link to your profile pic"
-                  className="input input-bordered"
+                  className="input input-bordered text-gray-900"
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text text-error">Email</span>
                 </label>
                 <input
                   type="email"
                   name="email"
                   placeholder="Your email"
-                  className="input input-bordered"
+                  className="input input-bordered text-gray-900"
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text text-error">Password</span>
                 </label>
                 <input
                   type="password"
                   name="password"
                   placeholder="Your password"
-                  className="input input-bordered"
+                  className="input input-bordered text-gray-900"
                   required
                 />
                 <label className="mt-4 text-right text-sm">
