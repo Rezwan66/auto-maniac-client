@@ -145,7 +145,7 @@ const AddProduct = () => {
                     type="number"
                     min="1"
                     max="5"
-                    step="0.1"
+                    step="0.5"
                     name="rating"
                     placeholder="Rating"
                     className="input input-bordered"
