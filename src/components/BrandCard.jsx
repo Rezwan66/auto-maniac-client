@@ -8,7 +8,11 @@ const BrandCard = ({ brand }) => {
       <Link to={`/brand/${name}`}>
         <div className="card bg-transparent">
           <figure>
-            <img className="h-24 w-24 rounded-full" src={image} alt="brands" />
+            <img
+              className="h-24 w-24 rounded-full object-cover"
+              src={image}
+              alt="brands"
+            />
           </figure>
           <div className="card-body">
             <h2 className="card-title text-2xl justify-center">{name}</h2>

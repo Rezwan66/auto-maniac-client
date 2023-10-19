@@ -2,9 +2,9 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
-import logo from '../assets/logo.png';
-import { useEffect } from 'react';
-import { themeChange } from 'theme-change';
+// import logo from '../assets/logo.png';
+import logo2 from '../assets/logo-noBg.png';
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 const NavBar = () => {
   const { user, logoutUser } = useContext(AuthContext);
@@ -14,13 +14,7 @@ const NavBar = () => {
   const handleToggleTheme = () => {
     const element = document.body;
     element.classList.toggle('dark-mode');
-    setDark(!dark);
   };
-
-  useEffect(() => {
-    themeChange(false);
-    // 👆 false parameter is required for react project
-  }, []);
 
   const navLinks = (
     <>
@@ -91,7 +85,7 @@ const NavBar = () => {
 
   return (
     <div>
-      <div className="navbar bg-transparent lg:px-0">
+      <div className="navbar bg-transparent lg:px-0 py-5">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -112,28 +106,27 @@ const NavBar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-gray-900"
             >
               {navLinks}
             </ul>
           </div>
 
-          <div className="border-2 border-error rounded-xl bg-base-100">
-            <img className="w-36 h-full" src={logo} alt="" />
-          </div>
-          <div>
-            {/* <button
-              onClick={() => {
-                setDark(!dark);
-              }}
-              data-toggle-theme="dark,light"
-              data-act-class="ACTIVECLASS"
-            >
-              {dark ? 'dark' : 'light'}
-            </button> */}
-            <button onClick={handleToggleTheme}>
-              {dark ? 'Light' : 'Dark'}
-            </button>
+          <div className="flex items-center">
+            <div className="border-error bg-transparent">
+              {/* <img className="w-32 h-full" src={logo} alt="" /> */}
+              <img className="w-32 h-full" src={logo2} alt="" />
+            </div>
+            <div>
+              <button onClick={handleToggleTheme}>
+                <DarkModeSwitch
+                  style={{ marginLeft: '20px' }}
+                  checked={dark}
+                  onChange={() => setDark(!dark)}
+                  size={40}
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -154,7 +147,10 @@ const NavBar = () => {
                   <p>{user?.displayName}</p>
                 </div>
 
-                <button onClick={handleLogout} className="btn btn-secondary">
+                <button
+                  onClick={handleLogout}
+                  className="btn btn-error text-white"
+                >
                   Logout
                 </button>
               </div>

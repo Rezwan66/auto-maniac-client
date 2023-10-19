@@ -2,7 +2,8 @@ const OurPrices = () => {
   return (
     <div className="mb-10 py-6">
       <h2 className="text-4xl font-semibold text-center mb-2">
-        Choose Our Affordable Plans
+        Choose Our <span className="text-rose-500 font-bold">Affordable</span>{' '}
+        Plans
       </h2>
       <p className="text-center mb-10">
         <i>For a smoother experience in your automotive journey.</i>

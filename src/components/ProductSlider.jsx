@@ -5,7 +5,7 @@ const ProductSlider = () => {
         <div id="slide1" className="carousel-item relative w-full">
           <img
             src="https://i.imgur.com/remxAUk.jpg"
-            className="w-full h-80 object-cover"
+            className="w-full h-[450px] object-cover"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide3" className="btn btn-circle">
@@ -18,8 +18,8 @@ const ProductSlider = () => {
         </div>
         <div id="slide2" className="carousel-item relative w-full">
           <img
-            src="https://i.imgur.com/gOwnc5Y.jpg"
-            className="w-full h-80 object-cover"
+            src="https://i.ibb.co/ZVnPyRd/bannercar3.jpg"
+            className="w-full h-[450px] object-cover"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide1" className="btn btn-circle">
@@ -32,8 +32,8 @@ const ProductSlider = () => {
         </div>
         <div id="slide3" className="carousel-item relative w-full">
           <img
-            src="https://i.imgur.com/ReNP5TS.jpg"
-            className="w-full h-80 object-cover"
+            src="https://i.ibb.co/dfT2sFd/bannercar4.jpg"
+            className="w-full h-[450px] object-cover"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide2" className="btn btn-circle">

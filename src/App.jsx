@@ -14,6 +14,7 @@ function App() {
         className="min-h-screen bg-no-repeat bg-cover"
         style={{ backgroundImage: 'url(/light.svg)' }}
       ></div> */}
+
       <div className="">
         {/* <DarkModeSwitch
           checked={isDarkMode}
@@ -21,7 +22,8 @@ function App() {
           size={50}
         /> */}
       </div>
-      <div className="max-w-[1440px] min-h-screen mx-auto">
+
+      <div className="max-w-7xl min-h-screen mx-auto">
         <NavBar></NavBar>
         <Outlet></Outlet>
       </div>

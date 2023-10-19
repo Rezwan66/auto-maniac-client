@@ -26,7 +26,7 @@ const EditProduct = () => {
     };
     console.log(updatedProduct);
 
-    fetch(`http://localhost:5000/product/${_id}`, {
+    fetch(`https://auto-maniac-server.vercel.app/product/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -64,42 +64,42 @@ const EditProduct = () => {
                 {/* image */}
                 <div className="form-control col-span-3">
                   <label className="label">
-                    <span className="label-text">Image</span>
+                    <span className="label-text text-error">Image</span>
                   </label>
                   <input
                     type="text"
                     defaultValue={image}
                     name="image"
                     placeholder="Photo URL"
-                    className="input input-bordered"
+                    className="input input-bordered text-gray-900"
                     required
                   />
                 </div>
                 {/* name */}
                 <div className="form-control col-span-2">
                   <label className="label">
-                    <span className="label-text">Name</span>
+                    <span className="label-text text-error">Name</span>
                   </label>
                   <input
                     type="text"
                     defaultValue={name}
                     name="name"
                     placeholder="Name of the product"
-                    className="input input-bordered"
+                    className="input input-bordered text-gray-900"
                     required
                   />
                 </div>
                 {/* brand */}
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Brand</span>
+                    <span className="label-text text-error">Brand</span>
                   </label>
                   <select
                     required
                     name="brand"
                     defaultValue={brand}
                     placeholder="Brand name"
-                    className="input input-bordered"
+                    className="input input-bordered text-gray-900"
                   >
                     <option value="" disabled hidden>
                       Select a brand
@@ -115,13 +115,13 @@ const EditProduct = () => {
                 {/* type */}
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Type</span>
+                    <span className="label-text text-error">Type</span>
                   </label>
                   <select
                     required
                     name="type"
                     placeholder="Type of product"
-                    className="input input-bordered"
+                    className="input input-bordered text-gray-900"
                     defaultValue={type}
                   >
                     <option value="" disabled hidden>
@@ -135,26 +135,27 @@ const EditProduct = () => {
                     <option value="Electric Vehicle (EV)">
                       Electric Vehicle (EV)
                     </option>
+                    <option value="Car Part">Car Part</option>
                   </select>
                 </div>
                 {/* price */}
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Price</span>
+                    <span className="label-text text-error">Price</span>
                   </label>
                   <input
                     type="text"
                     name="price"
                     defaultValue={price}
                     placeholder="Price"
-                    className="input input-bordered"
+                    className="input input-bordered text-gray-900"
                     required
                   />
                 </div>
                 {/* rating */}
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Rating (1-5)</span>
+                    <span className="label-text text-error">Rating (1-5)</span>
                   </label>
                   <input
                     type="number"
@@ -164,27 +165,29 @@ const EditProduct = () => {
                     name="rating"
                     defaultValue={rating}
                     placeholder="Rating"
-                    className="input input-bordered"
+                    className="input input-bordered text-gray-900"
                     required
                   />
                 </div>
                 {/* description */}
                 <div className="form-control col-span-3">
                   <label className="label">
-                    <span className="label-text">Short description</span>
+                    <span className="label-text text-error">
+                      Short description
+                    </span>
                   </label>
                   <input
                     type="text"
                     name="description"
                     defaultValue={description}
                     placeholder="Short description of the product"
-                    className="input input-bordered"
+                    className="input input-bordered text-gray-900"
                     required
                   />
                 </div>
                 {/* add product btn */}
                 <div className="form-control mt-6 col-span-3">
-                  <button type="submit" className="btn btn-accent">
+                  <button type="submit" className="btn btn-accent text-white">
                     Edit
                   </button>
                 </div>

@@ -42,7 +42,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(`https://auto-maniac-server.vercel.app/product/${params.id}`),
       },
       {
         path: '/cart',
@@ -51,13 +51,16 @@ const router = createBrowserRouter([
             <MyCart></MyCart>
           </PrivateRoute>
         ),
-        loader: () => fetch('http://localhost:5000/cartProducts'),
+        loader: () =>
+          fetch('https://auto-maniac-server.vercel.app/cartProducts'),
       },
       {
         path: '/brand/:name',
         element: <BrandProducts></BrandProducts>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.name}`),
+          fetch(
+            `https://auto-maniac-server.vercel.app/products/${params.name}`
+          ),
       },
       {
         path: '/product/:id',
@@ -67,7 +70,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(`https://auto-maniac-server.vercel.app/product/${params.id}`),
       },
       {
         path: '/login',

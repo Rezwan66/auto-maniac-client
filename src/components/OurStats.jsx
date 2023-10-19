@@ -19,7 +19,7 @@ const OurStats = () => {
             </svg>
           </div>
           <div className="stat-title">Cars Sold</div>
-          <div className="stat-value text-error">3,100</div>
+          <div className="stat-value text-rose-500">3,100</div>
           <div className="stat-desc">Jan 2022 - Jan 2023</div>
         </div>
 
@@ -40,7 +40,7 @@ const OurStats = () => {
             </svg>
           </div>
           <div className="stat-title">New Subscribers</div>
-          <div className="stat-value text-error">4,200</div>
+          <div className="stat-value text-rose-500">4,200</div>
           <div className="stat-desc">↗︎ 90 (14%)</div>
         </div>
 
@@ -61,7 +61,7 @@ const OurStats = () => {
             </svg>
           </div>
           <div className="stat-title">Cars Added</div>
-          <div className="stat-value text-error">12,000</div>
+          <div className="stat-value text-rose-500">12,000</div>
           <div className="stat-desc">↗︎ 400 (22%)</div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <div>
+    <div className="mt-4">
       <div
         className="hero h-[450px] bg-center rounded-md"
         style={{
@@ -9,7 +9,7 @@ const Banner = () => {
       >
         <div className="hero-overlay bg-opacity-60 rounded-md"></div>
         <div className="hero-content w-full text-neutral-content text-right justify-end">
-          <div className="max-w-lg space-y-4">
+          <div className="max-w-lg space-y-4 md:mr-4">
             <h1 className="text-5xl text-error font-bold">Drive the Future</h1>
             <i className="font-bold text-white">
               with Our Premier Automotive Brands
