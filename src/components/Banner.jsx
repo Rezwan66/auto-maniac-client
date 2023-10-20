@@ -7,7 +7,7 @@ const Banner = () => {
           backgroundImage: 'url(/car-dashboard.jpg)',
         }}
       >
-        <div className="hero-overlay bg-opacity-60 rounded-md"></div>
+        <div className="hero-overlay bg-opacity-40 rounded-md"></div>
         <div className="hero-content w-full text-neutral-content text-right justify-end">
           <div className="max-w-lg space-y-4 md:mr-4">
             <h1 className="text-5xl text-error font-bold">Drive the Future</h1>

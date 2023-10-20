@@ -9,7 +9,10 @@ const BrandProducts = () => {
   return (
     <div className="my-10 min-h-screen">
       <ProductSlider></ProductSlider>
-      <h2 className="my-10 text-sm text-right">
+      <h2 className="my-10 text-center underline text-4xl font-semibold">
+        {name} Products
+      </h2>
+      <h2 className="mb-5 text-sm text-right">
         <i>
           Showing {products.length}{' '}
           {products.length === 1 ? 'Product' : 'Products'}
@@ -24,7 +27,7 @@ const BrandProducts = () => {
         </div>
       ) : (
         <div className="text-center">
-          <h2 className="text-4xl mb-6">No products available</h2>
+          <h2 className="text-3xl mb-6">No products available</h2>
           <p>
             Add some products right now: 👉{' '}
             <Link to="/add" className="btn btn-accent text-white">
