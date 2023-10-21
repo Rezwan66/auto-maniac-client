@@ -37,7 +37,7 @@ const CartProductCard = ({ product, cartProducts, setCartProducts }) => {
 
   return (
     <div>
-      <div className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
+      <div className="justify-between mb-4 border rounded-lg bg-transparent p-4 shadow-md sm:flex sm:justify-start">
         <img
           src={image}
           alt="product-image"
@@ -45,11 +45,11 @@ const CartProductCard = ({ product, cartProducts, setCartProducts }) => {
         />
         <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
           <div className="mt-5 sm:mt-0">
-            <h2 className="text-lg font-bold text-gray-900">{name}</h2>
-            <p className="mt-1 text-xs text-gray-700">{brand}</p>
-            <p className="mt-1 text-xs text-gray-700">{type}</p>
-            <p className="mt-1 text-xs text-gray-500">Rating: {rating}</p>
-            <p className="mt-3 text-xs text-gray-500 lg:max-w-[200px] italic">
+            <h2 className="text-lg font-bold text-gray-500">{name}</h2>
+            <p className="mt-1 text-xs ">{brand}</p>
+            <p className="mt-1 text-xs ">{type}</p>
+            <p className="mt-1 text-xs ">Rating: {rating}</p>
+            <p className="mt-3 text-xs text-gray-600 lg:max-w-[200px] italic">
               {description.length > 150 ? (
                 <span>{description.slice(0, 150)}...</span>
               ) : (
@@ -59,7 +59,7 @@ const CartProductCard = ({ product, cartProducts, setCartProducts }) => {
           </div>
           <div className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
             <div className="flex items-center space-x-4">
-              <p className="text-xl flex items-center text-gray-900">
+              <p className="text-xl flex items-center text-gray-500">
                 <FaDollarSign></FaDollarSign>
                 {price}
               </p>

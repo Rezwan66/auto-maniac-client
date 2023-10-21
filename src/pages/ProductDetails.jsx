@@ -50,7 +50,7 @@ const ProductDetails = () => {
   return (
     <div>
       <div className="flex justify-center my-10 mb-40">
-        <div className="flex flex-col items-center bg-white border-gray-200 rounded-lg shadow md:flex-row lg:min-w-[750px] hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <div className="flex flex-col items-center bg-transparent border-gray-200 rounded-lg shadow md:flex-row lg:min-w-[750px]  dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
           <img
             className="object-cover w-full rounded-t-lg h-96 md:h-full md:w-48 md:rounded-none md:rounded-l-lg"
             src={image}
@@ -61,28 +61,28 @@ const ProductDetails = () => {
               <h5 className="mb-3 text-2xl font-bold tracking-tight text-rose-500 dark:text-white">
                 {name}
               </h5>
-              <p className="mb-2 font-normal text-gray-700 dark:text-gray-400">
+              <p className="mb-2 font-normal  dark:text-gray-400">
                 <strong>Brand: </strong>
                 {brand}
               </p>
-              <p className="mb-4 font-normal text-gray-700 dark:text-gray-400">
+              <p className="mb-4 font-normal  dark:text-gray-400">
                 <strong>Type of Vehicle: </strong>
                 {type}
               </p>
-              <p className="mb-10 font-normal text-gray-700 dark:text-gray-400 text-justify">
+              <p className="mb-10 font-normal text-gray-500 dark:text-gray-400 text-justify">
                 <i>{description}</i>
               </p>
               <div>
                 <button
                   onClick={handleAddToCart}
-                  className="btn btn-accent text-white"
+                  className="btn btn-error w-1/4 text-white"
                 >
                   Add to Cart
                 </button>
               </div>
             </div>
             <div>
-              <h5 className="text-6xl font-bold tracking-tight text-gray-900 dark:text-white flex items-center mr-4 mt-6 mb-6">
+              <h5 className="text-6xl font-bold tracking-tight  dark:text-white flex items-center mr-4 mt-6 mb-6">
                 <FaDollarSign></FaDollarSign>
                 {price}
               </h5>

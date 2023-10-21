@@ -187,7 +187,7 @@ const EditProduct = () => {
                 </div>
                 {/* add product btn */}
                 <div className="form-control mt-6 col-span-3">
-                  <button type="submit" className="btn btn-accent text-white">
+                  <button type="submit" className="btn btn-error text-white">
                     Edit
                   </button>
                 </div>

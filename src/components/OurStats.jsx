@@ -1,8 +1,8 @@
 const OurStats = () => {
   return (
     <div className="mt-10 mb-4 flex justify-center">
-      <div className="stats shadow rounded-sm flex flex-col md:flex-row">
-        <div className="stat">
+      <div className="stats shadow bg-transparent rounded-sm flex flex-col md:flex-row">
+        <div className="stat ">
           <div className="stat-figure text-error">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -18,9 +18,9 @@ const OurStats = () => {
               ></path>
             </svg>
           </div>
-          <div className="stat-title">Cars Sold</div>
+          <div className="stat-title text-gray-400">Cars Sold</div>
           <div className="stat-value text-rose-500">3,100</div>
-          <div className="stat-desc">Jan 2022 - Jan 2023</div>
+          <div className="stat-desc text-gray-400">Jan 2022 - Jan 2023</div>
         </div>
 
         <div className="stat">
@@ -39,9 +39,9 @@ const OurStats = () => {
               ></path>
             </svg>
           </div>
-          <div className="stat-title">New Subscribers</div>
+          <div className="stat-title text-gray-400">New Subscribers</div>
           <div className="stat-value text-rose-500">4,200</div>
-          <div className="stat-desc">↗︎ 90 (14%)</div>
+          <div className="stat-desc text-gray-400">↗︎ 90 (14%)</div>
         </div>
 
         <div className="stat">
@@ -60,9 +60,9 @@ const OurStats = () => {
               ></path>
             </svg>
           </div>
-          <div className="stat-title">Cars Added</div>
+          <div className="stat-title text-gray-400">Cars Added</div>
           <div className="stat-value text-rose-500">12,000</div>
-          <div className="stat-desc">↗︎ 400 (22%)</div>
+          <div className="stat-desc text-gray-400">↗︎ 400 (22%)</div>
         </div>
       </div>
     </div>

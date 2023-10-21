@@ -6,7 +6,7 @@ const ProductCard = ({ product }) => {
   const { _id, image, name, brand, type, price, rating } = product || {};
   return (
     <div>
-      <div className="card bg-base-100 shadow-xl">
+      <div className="card bg-transparent shadow-xl">
         <figure>
           <img src={image} alt="cars" className="h-80 w-full object-cover" />
         </figure>
@@ -14,7 +14,7 @@ const ProductCard = ({ product }) => {
           <h2 className="card-title justify-center text-2xl text-rose-500">
             {name}
           </h2>
-          <div className="flex justify-between items-center text-gray-600 my-5">
+          <div className="flex justify-between items-center  my-5">
             <div>
               <p>
                 <strong>Brand: </strong>
@@ -39,12 +39,12 @@ const ProductCard = ({ product }) => {
           </div>
           <div className="card-actions justify-center gap-2">
             <Link to={`/product/${_id}`} className="flex-1">
-              <button className="btn btn-info text-white w-full">
+              <button className="btn btn-error btn-circle text-white w-full">
                 Details
               </button>
             </Link>
             <Link to={`/edit/${_id}`} className="flex-1">
-              <button className="btn btn-success text-white w-full">
+              <button className="btn btn-error btn-circle text-white w-full">
                 Update
               </button>
             </Link>
