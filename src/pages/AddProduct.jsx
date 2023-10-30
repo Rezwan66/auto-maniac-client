@@ -1,3 +1,4 @@
+import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const AddProduct = () => {
@@ -13,17 +14,31 @@ const AddProduct = () => {
     const description = form.description.value;
     const product = { image, name, brand, type, price, rating, description };
     console.log(product);
-    fetch('https://auto-maniac-server.vercel.app/products', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(product),
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        if (data.insertedId) {
+    // fetch('https://auto-maniac-server.vercel.app/products', {
+    //   method: 'POST',
+    //   headers: {
+    //     'content-type': 'application/json',
+    //   },
+    //   body: JSON.stringify(product),
+    // })
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     console.log(data);
+    //     if (data.insertedId) {
+    //       Swal.fire({
+    //         title: 'Awesome!',
+    //         text: 'Added product successfully!',
+    //         icon: 'success',
+    //         confirmButtonText: 'Cool',
+    //       });
+    //       form.reset();
+    //     }
+    //   });
+    axios
+      .post('https://auto-maniac-server.vercel.app/products', product)
+      .then(res => {
+        console.log(res.data);
+        if (res.data.insertedId) {
           Swal.fire({
             title: 'Awesome!',
             text: 'Added product successfully!',
@@ -32,6 +47,9 @@ const AddProduct = () => {
           });
           form.reset();
         }
+      })
+      .catch(err => {
+        console.log(err.message);
       });
   };
   return (

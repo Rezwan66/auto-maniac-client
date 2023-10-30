@@ -13,7 +13,7 @@ const Home = () => {
     <div>
       <Banner></Banner>
       {/* our brands */}
-      <div className="my-10">
+      <div className="my-10 mx-auto max-w-7xl">
         <h2 className="text-4xl font-semibold underline text-center mb-10">
           Our Featured Brands
         </h2>

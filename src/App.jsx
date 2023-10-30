@@ -23,8 +23,8 @@ function App() {
         /> */}
       </div>
 
-      <div className="max-w-7xl min-h-screen mx-auto">
-        <NavBar></NavBar>
+      <NavBar></NavBar>
+      <div className="min-h-screen">
         <Outlet></Outlet>
       </div>
       <Footer></Footer>

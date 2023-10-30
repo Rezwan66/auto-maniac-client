@@ -9,33 +9,35 @@ const BrandProducts = () => {
   return (
     <div className="my-10 min-h-screen">
       <ProductSlider></ProductSlider>
-      <h2 className="my-10 text-center underline text-4xl font-semibold">
-        {name} Products
-      </h2>
-      <h2 className="mb-5 text-sm text-right">
-        <i>
-          Showing {products.length}{' '}
-          {products.length === 1 ? 'Product' : 'Products'}
-        </i>
-      </h2>
+      <div className="max-w-7xl mx-auto">
+        <h2 className="my-10 text-center underline text-4xl font-semibold">
+          {name} Products
+        </h2>
+        <h2 className="mb-5 text-sm text-right text-rose-500">
+          <i>
+            Showing {products.length}{' '}
+            {products.length === 1 ? 'Product' : 'Products'}
+          </i>
+        </h2>
 
-      {products.length ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products?.map(product => (
-            <ProductCard key={product._id} product={product}></ProductCard>
-          ))}
-        </div>
-      ) : (
-        <div className="text-center">
-          <h2 className="text-3xl mb-6">No products available</h2>
-          <p>
-            Add some products right now: 👉{' '}
-            <Link to="/add" className="btn btn-accent text-white">
-              Add Products
-            </Link>
-          </p>
-        </div>
-      )}
+        {products.length ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products?.map(product => (
+              <ProductCard key={product._id} product={product}></ProductCard>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center">
+            <h2 className="text-3xl mb-6">No products available</h2>
+            <p>
+              Add some products right now: 👉{' '}
+              <Link to="/add" className="btn btn-accent text-white">
+                Add Products
+              </Link>
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
