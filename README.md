@@ -1,6 +1,6 @@
 # Auto Maniac Client Website
 
-A simple responsive single page React application with Firebase SDK Authentication, and backend integration using Express JS and MongoDB database.
+A simple responsive car brand shop, created as a single page React application with Firebase SDK Authentication, and backend integration using Express JS MongoDB CRUD operations.
 
 ### Technologies Used
 

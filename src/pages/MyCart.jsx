@@ -2,23 +2,40 @@ import { Link, useLoaderData } from 'react-router-dom';
 import CartProductCard from '../components/CartProductCard';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
+// import { useQuery } from '@tanstack/react-query';
+// import axios from 'axios';
 
 const MyCart = () => {
   const { user } = useContext(AuthContext);
   const currentUserEmail = user.email;
-  console.log(currentUserEmail);
+  // console.log(currentUserEmail);
+
   const loadedCartProducts = useLoaderData();
   const currentUserCart = loadedCartProducts.filter(
     product => product.email === currentUserEmail
   );
   const [cartProducts, setCartProducts] = useState(currentUserCart);
-  console.log(cartProducts);
+  // console.log(cartProducts);
   // subtotal calculation
   let subtotal = 0;
   cartProducts.forEach(p => {
     subtotal = subtotal + parseFloat(p.price);
   });
-  console.log(subtotal);
+  // console.log(subtotal);
+
+  // get cart products using tanstack query
+  // const { data, isError, isFetching, isLoading, refetch } = useQuery({
+  //   queryKey: ['cartData'],
+  //   queryFn: async () => {
+  //     const res = await fetch(
+  //       'https://auto-maniac-server.vercel.app/cartProducts'
+  //     );
+  //     const data = res.json();
+  //     return data;
+  //   },
+  // });
+  // console.log(data);
+
   return (
     <div className="my-10">
       <div className="min-h-screen">
