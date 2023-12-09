@@ -6,6 +6,30 @@ A simple responsive car brand shop, created as a single page React application w
 
 [![Tech](https://skillicons.dev/icons?i=js,react,tailwind,firebase,nodejs,express,mongodb&theme=dark)](https://skillicons.dev)
 
+## Getting Started
+
+Follow these steps to clone and run the project on your local machine.
+
+Clone the repository and navigate to the cloned repo.
+
+#### Install Dependencies
+
+```bash
+npm install
+```
+
+#### Configure Environment Variables
+
+You will be needing the environment variables for Firebase SDK before running the project. Please contact me if you need access to the .env.local file.
+
+#### Run the Project
+
+After configuring the environment variables, run this command to start the project.
+
+```bash
+npm run dev
+```
+
 ### Features & Functionalities
 
 - Click on a logo of _Featured Brands_ in the `Home` page to view all products of that brand in the database.
