@@ -5,10 +5,14 @@ import { Link } from 'react-router-dom';
 const ProductCard = ({ product }) => {
   const { _id, image, name, brand, type, price, rating } = product || {};
   return (
-    <div>
+    <div className="group">
       <div className="card bg-transparent shadow-xl">
         <figure>
-          <img src={image} alt="cars" className="h-80 w-full object-cover" />
+          <img
+            src={image}
+            alt="cars"
+            className="h-80 w-full object-cover group-hover:scale-110 transition"
+          />
         </figure>
         <div className="card-body">
           <h2 className="card-title justify-center text-2xl text-rose-500">
