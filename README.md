@@ -33,6 +33,7 @@ npm run dev
 ### Updated Features
 
 - Group animation effect on the brand cards on the Homepage and the product cards on the Brand Products pages.
+- Dark mode text color on My Cart page fixed, and changed dark mode bg color.
 
 ### Features & Functionalities
 
