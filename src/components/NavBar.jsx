@@ -25,7 +25,7 @@ const NavBar = () => {
             isPending
               ? 'pending'
               : isActive
-              ? 'bg-error text-white text-base px-4 py-2 rounded-lg'
+              ? 'bg-error text-white text-base px-3 py-1 rounded-lg'
               : ''
           }
         >
@@ -39,7 +39,7 @@ const NavBar = () => {
             isPending
               ? 'pending'
               : isActive
-              ? 'bg-error text-white text-base px-4 py-2 rounded-lg'
+              ? 'bg-error text-white text-base px-3 py-1 rounded-lg'
               : ''
           }
         >
@@ -53,7 +53,7 @@ const NavBar = () => {
             isPending
               ? 'pending'
               : isActive
-              ? 'bg-error text-white text-base px-4 py-2 rounded-lg'
+              ? 'bg-error text-white text-base px-3 py-1 rounded-lg'
               : ''
           }
         >
@@ -113,17 +113,17 @@ const NavBar = () => {
           </div>
 
           <div className="flex items-center">
-            <div className="border-error bg-transparent">
+            <Link to="/" className="border-error bg-transparent">
               {/* <img className="w-32 h-full" src={logo} alt="" /> */}
               <img className="w-32 h-full" src={logo2} alt="" />
-            </div>
+            </Link>
             <div>
               <button onClick={handleToggleTheme}>
                 <DarkModeSwitch
-                  style={{ marginLeft: '20px' }}
+                  style={{ marginLeft: '20px', marginTop: '4px' }}
                   checked={dark}
                   onChange={() => setDark(!dark)}
-                  size={40}
+                  size={30}
                 />
               </button>
             </div>
@@ -139,7 +139,7 @@ const NavBar = () => {
             {user ? (
               <div className="flex flex-col md:flex-row items-center gap-2">
                 <div className="flex items-center gap-2">
-                  <div className="avatar ">
+                  <div className="avatar hidden md:block">
                     <div className="w-5 h-5 md:w-10 md:h-10 rounded-full">
                       <img src={user?.photoURL} />
                     </div>
@@ -149,7 +149,7 @@ const NavBar = () => {
 
                 <button
                   onClick={handleLogout}
-                  className="btn btn-error text-white"
+                  className="btn btn-error btn-sm text-white"
                 >
                   Logout
                 </button>

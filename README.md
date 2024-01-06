@@ -30,6 +30,10 @@ After configuring the environment variables, run this command to start the proje
 npm run dev
 ```
 
+### Updated Features
+
+- Group animation effect on the brand cards on the Homepage and the product cards on the Brand Products pages.
+
 ### Features & Functionalities
 
 - Click on a logo of _Featured Brands_ in the `Home` page to view all products of that brand in the database.
