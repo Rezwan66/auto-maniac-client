@@ -9,7 +9,7 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 const NavBar = () => {
   const { user, logoutUser } = useContext(AuthContext);
   const [dark, setDark] = useState(false);
-  console.log(dark);
+  // console.log(dark);
 
   const handleToggleTheme = () => {
     const element = document.body;
