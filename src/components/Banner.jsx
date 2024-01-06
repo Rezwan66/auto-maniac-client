@@ -2,7 +2,7 @@ const Banner = () => {
   return (
     <div className="mt-4">
       <div
-        className="hero h-[450px] bg-center rounded-md"
+        className="hero h-[450px] bg-center"
         style={{
           backgroundImage: 'url(/car-dashboard.jpg)',
         }}

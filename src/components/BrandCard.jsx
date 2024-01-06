@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 const BrandCard = ({ brand }) => {
   const { brand: name, image } = brand;
   return (
-    <div>
+    <div className="group">
       <Link to={`/brand/${name}`}>
         <div className="card bg-transparent">
           <figure>
             <img
-              className="h-24 w-24 rounded-full object-cover"
+              className="h-24 w-24 rounded-full object-cover group-hover:scale-110 transition"
               src={image}
               alt="brands"
             />
