@@ -2,6 +2,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import CartProductCard from '../components/CartProductCard';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
+import Swal from 'sweetalert2';
 // import { useQuery } from '@tanstack/react-query';
 // import axios from 'axios';
 
@@ -35,6 +36,27 @@ const MyCart = () => {
   //   },
   // });
   // console.log(data);
+
+  const handleCheckout = () => {
+    // console.log(subtotal + 1000);
+    Swal.fire({
+      title: 'Checkout?',
+      text: `Pay $${subtotal + 1000} and confirm order?`,
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, pay now!',
+    }).then(result => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Paid!',
+          text: 'Your order has been confirmed.',
+          icon: 'success',
+        });
+      }
+    });
+  };
 
   return (
     <div className="my-10">
@@ -86,7 +108,10 @@ const MyCart = () => {
                 <p className="text-sm ">including VAT</p>
               </div>
             </div>
-            <button className="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">
+            <button
+              className="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600"
+              onClick={() => handleCheckout()}
+            >
               Check out
             </button>
           </div>
