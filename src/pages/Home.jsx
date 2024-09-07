@@ -7,7 +7,7 @@ import OurStats from '../components/OurStats';
 
 const Home = () => {
   const brands = useLoaderData();
-  console.log(brands);
+  // console.log(brands);
 
   return (
     <div>
