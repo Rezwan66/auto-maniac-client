@@ -21,7 +21,7 @@ const Home = () => {
       });
   }, []);
 
-  console.log(products);
+  // console.log(products);
 
   return (
     <div>
@@ -34,7 +34,7 @@ const Home = () => {
           <span className="loading w-20 loading-spinner text-secondary"></span>
         </div>
       ) : (
-        <FeaturedProducts />
+        <FeaturedProducts products={products} />
       )}
       {/* our brands */}
       <div className="my-10 mx-auto max-w-7xl">
