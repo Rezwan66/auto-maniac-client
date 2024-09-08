@@ -7,7 +7,7 @@ const BrandProducts = () => {
   const { name } = useParams();
   console.log(name, products);
   return (
-    <div className="my-10 min-h-screen">
+    <div className="mb-10 min-h-screen">
       <ProductSlider></ProductSlider>
       <div className="max-w-7xl mx-auto">
         <h2 className="my-10 text-center underline text-4xl font-semibold">
