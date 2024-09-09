@@ -1,6 +1,6 @@
 const OurStats = () => {
   return (
-    <div className="mt-10 mb-4 flex justify-center">
+    <div className="my-20 mb-4 flex justify-center">
       <div className="stats shadow bg-transparent rounded-sm flex flex-col md:flex-row">
         <div className="stat ">
           <div className="stat-figure text-error">

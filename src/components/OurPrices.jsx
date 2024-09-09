@@ -1,6 +1,6 @@
 const OurPrices = () => {
   return (
-    <div className="mb-10 py-6">
+    <div className="my-20 py-6">
       <h2 className="text-4xl font-semibold text-center mb-2">
         Choose Our <span className="text-rose-500 font-bold">Affordable</span>{' '}
         Plans

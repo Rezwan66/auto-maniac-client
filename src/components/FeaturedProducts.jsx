@@ -13,7 +13,7 @@ const FeaturedProducts = ({ products }) => {
   //   console.log(featured);
   return (
     <>
-      <div className="my-10 mx-auto max-w-7xl">
+      <div className="my-20 mx-auto max-w-7xl">
         <h2 className="text-4xl font-semibold underline text-center mb-10">
           Our Featured Products
         </h2>

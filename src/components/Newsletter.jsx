@@ -1,6 +1,6 @@
 const Newsletter = () => {
   return (
-    <div className="mt-10">
+    <div className="mt-20">
       <div className="relative rounded-t-md isolate overflow-hidden bg-rose-500 py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">

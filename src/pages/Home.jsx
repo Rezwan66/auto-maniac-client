@@ -10,7 +10,7 @@ import FeaturedProducts from '../components/FeaturedProducts';
 const Home = () => {
   const brands = useLoaderData();
   // console.log(brands);
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch('https://auto-maniac-server.vercel.app/products')
@@ -37,7 +37,7 @@ const Home = () => {
         <FeaturedProducts products={products} />
       )}
       {/* our brands */}
-      <div className="my-10 mx-auto max-w-7xl">
+      <div className="my-20 mx-auto max-w-7xl">
         <h2 className="text-4xl font-semibold underline text-center mb-10">
           Our Featured Brands
         </h2>
