@@ -37,14 +37,16 @@ const Home = () => {
         <FeaturedProducts products={products} />
       )}
       {/* our brands */}
-      <div className="my-20 mx-auto max-w-7xl">
+      <div className="my-20">
         <h2 className="text-4xl font-semibold underline text-center mb-10">
           Our Featured Brands
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {brands?.map(brand => (
-            <BrandCard key={brand.id} brand={brand}></BrandCard>
-          ))}
+        <div className="bg-rose-500 pt-8">
+          <div className="mx-auto max-w-7xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {brands?.map(brand => (
+              <BrandCard key={brand.id} brand={brand}></BrandCard>
+            ))}
+          </div>
         </div>
       </div>
       {/* stat */}

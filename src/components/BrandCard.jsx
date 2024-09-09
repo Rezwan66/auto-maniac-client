@@ -15,7 +15,9 @@ const BrandCard = ({ brand }) => {
             />
           </figure>
           <div className="card-body">
-            <h2 className="card-title text-2xl justify-center">{name}</h2>
+            <h2 className="card-title text-2xl justify-center text-white">
+              {name}
+            </h2>
           </div>
         </div>
       </Link>
