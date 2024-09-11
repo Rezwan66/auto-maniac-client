@@ -6,11 +6,12 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
 import { Pagination, Autoplay } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 
 const FeaturedProducts = ({ products }) => {
   //   console.log(products);
   const featured = products?.filter(product => product.rating > '4.6');
-  //   console.log(featured);
+  console.log(featured);
   return (
     <>
       <div className="my-20 mx-auto max-w-7xl">
@@ -35,10 +36,16 @@ const FeaturedProducts = ({ products }) => {
           }}
           modules={[Pagination, Autoplay]}
           className="mySwiper"
+          onSwiper={swiper => {
+            swiper.el.onmouseenter = () => swiper.autoplay.stop();
+            swiper.el.onmouseleave = () => swiper.autoplay.start();
+          }}
         >
           {featured?.map(item => (
             <SwiperSlide key={item._id}>
-              <ProductCard product={item} />
+              <Link to={`/product/${item._id}`} className="flex-1">
+                <ProductCard product={item} />
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
