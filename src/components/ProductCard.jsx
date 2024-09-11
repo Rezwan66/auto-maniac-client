@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
           <h2 className="card-title justify-center text-2xl text-rose-500">
             {name}
           </h2>
-          {pathname === '/' ? (
+          {pathname === '/' || pathname.includes('/product/') ? (
             <></>
           ) : (
             <div>

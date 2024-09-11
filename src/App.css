@@ -10,3 +10,38 @@
   background-color: rgb(30 41 59);
   color: white;
 }
+
+/* .swiper-button-prev {
+  left: -50px;
+}
+
+.swiper-button-next {
+  right: -50px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: visible;
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.swiper-container-wrapper {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+} */

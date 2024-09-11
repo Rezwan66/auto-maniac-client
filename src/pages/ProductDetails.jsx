@@ -4,15 +4,23 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import Swal from 'sweetalert2';
 import Newsletter from '../components/Newsletter';
+import useProducts from '../hooks/useProducts';
+import OtherProductsOfThisBrand from '../components/OtherProductsOfThisBrand';
 
 const ProductDetails = () => {
   const { user } = useContext(AuthContext);
   const product = useLoaderData();
-  const { image, name, brand, type, price, description, rating } =
+  const { _id, image, name, brand, type, price, description, rating } =
     product || {};
-  //   console.log(product, user.email);
-  const { email } = user;
-  console.log(email);
+  const { isPending, error, products } = useProducts();
+  // console.log(products);
+  // console.log(product, user.email);
+  // const { email } = user;
+  // console.log(email);
+  const otherProductsOfBrand = products
+    ?.filter(item => item.brand === brand)
+    .filter(p => p._id != _id);
+  console.log(otherProductsOfBrand);
 
   const handleAddToCart = () => {
     const userProduct = {
@@ -90,6 +98,12 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+      {!isPending && !error && (
+        <OtherProductsOfThisBrand
+          brand={brand}
+          products={otherProductsOfBrand}
+        />
+      )}
       <Newsletter></Newsletter>
     </div>
   );
