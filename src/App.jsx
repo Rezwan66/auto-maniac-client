@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import ScrollToTop from './utilities/ScrollToTop';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 function App() {
   // const [isDarkMode, setDarkMode] = React.useState(false);
@@ -29,6 +30,7 @@ function App() {
         <Outlet></Outlet>
       </div>
       <Footer></Footer>
+      <ScrollToTopButton />
     </>
   );
 }
