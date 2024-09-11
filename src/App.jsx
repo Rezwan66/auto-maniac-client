@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import ScrollToTop from './utilities/ScrollToTop';
 
 function App() {
   // const [isDarkMode, setDarkMode] = React.useState(false);
@@ -22,7 +23,7 @@ function App() {
           size={50}
         /> */}
       </div>
-
+      <ScrollToTop />
       <NavBar></NavBar>
       <div className="min-h-screen">
         <Outlet></Outlet>
