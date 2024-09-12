@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 // import logo from '../assets/logo.png';
 import logo2 from '../assets/logo-noBg.png';
@@ -8,13 +8,34 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 const NavBar = () => {
   const { user, logoutUser } = useContext(AuthContext);
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(() => {
+    const storedTheme = localStorage.getItem('darkMode');
+    return storedTheme === 'true'; //convert our string to boolean
+  });
   // console.log(dark);
 
   const handleToggleTheme = () => {
-    const element = document.body;
-    element.classList.toggle('dark-mode');
+    // const element = document.body;
+    // element.classList.toggle('dark-mode');
+    const newDarkMode = !dark; //toggle theme
+    setDark(newDarkMode); //update the state
+    //Applying to body
+    if (newDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+    localStorage.setItem('darkMode', newDarkMode); //save to LS
   };
+  //On component mount, apply the stored theme to the body
+  useEffect(() => {
+    const element = document.body;
+    if (dark) {
+      element.classList.add('dark-mode');
+    } else {
+      element.classList.remove('dark-mode');
+    }
+  }, [dark]);
 
   const navLinks = (
     <>
@@ -122,7 +143,7 @@ const NavBar = () => {
                 <DarkModeSwitch
                   style={{ marginLeft: '20px', marginTop: '4px' }}
                   checked={dark}
-                  onChange={() => setDark(!dark)}
+                  onChange={handleToggleTheme}
                   size={30}
                 />
               </button>
