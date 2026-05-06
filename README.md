@@ -15,14 +15,9 @@
 
 ## 📸 Preview
 
-<!-- 
-  📌 To add a screenshot: Edit this README on GitHub, drag & drop a screenshot 
-  of the homepage into the editor, and it will auto-generate an image URL.
-  Then uncomment and update the img tag below.
--->
-<!-- <p align="center">
-  <img src="YOUR_SCREENSHOT_URL_HERE" alt="Auto Maniac Homepage" width="100%" />
-</p> -->
+<p align="center">
+  <img src="./assets/auto-maniac-preview.png" alt="Auto Maniac Homepage" width="100%" />
+</p>
 
 ---
 
