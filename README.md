@@ -1,51 +1,121 @@
-# Auto Maniac Client Website
+# 🏎️ Auto Maniac
 
-A simple responsive car brand shop, created as a single page React application with Firebase SDK Authentication, and backend integration using Express JS MongoDB CRUD operations.
+> A responsive online car marketplace built with React, where users can browse premium automotive brands, explore products, manage their cart, and perform full CRUD operations — powered by Firebase Auth and a MongoDB backend.
 
-### Technologies Used
+<p align="center">
+  <a href="https://auto-maniac.web.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Demo-auto--maniac.web.app-E63946?style=for-the-badge&logo=firebase&logoColor=white" alt="Live Demo" />
+  </a>&nbsp;
+  <a href="https://github.com/Rezwan66/auto-maniac-server" target="_blank">
+    <img src="https://img.shields.io/badge/Server%20Repo-auto--maniac--server-181717?style=for-the-badge&logo=github&logoColor=white" alt="Server Repo" />
+  </a>
+</p>
 
-[![Tech](https://skillicons.dev/icons?i=js,react,tailwind,firebase,nodejs,express,mongodb&theme=dark)](https://skillicons.dev)
+---
 
-## Getting Started
+## 📸 Preview
 
-Follow these steps to clone and run the project on your local machine.
+<!-- 
+  📌 To add a screenshot: Edit this README on GitHub, drag & drop a screenshot 
+  of the homepage into the editor, and it will auto-generate an image URL.
+  Then uncomment and update the img tag below.
+-->
+<!-- <p align="center">
+  <img src="YOUR_SCREENSHOT_URL_HERE" alt="Auto Maniac Homepage" width="100%" />
+</p> -->
 
-Clone the repository and navigate to the cloned repo.
+---
 
-#### Install Dependencies
+## ✨ Key Features
+
+- 🚗 **Brand-Based Browsing** — Explore vehicles by featured brands (Toyota, Ford, BMW, Mercedes, Tesla, Honda)
+- 🔍 **Product Details** — View detailed specifications, pricing, and descriptions for each vehicle
+- 🛒 **Shopping Cart** — Add products to your cart and manage selected items before checkout
+- ➕ **Add & Edit Products** — Full CRUD operations to add new products or update existing ones in the database
+- 🔐 **Authentication** — Register/Login via email-password or Google Sign-In using Firebase
+- 🌗 **Dark Mode** — Toggle between light and dark themes for comfortable browsing
+- 🎠 **Image Carousel** — Swiper-powered hero slider showcasing featured products
+- 📊 **Statistics Dashboard** — Visual stats section displaying cars sold, subscribers, and inventory metrics
+
+---
+
+## 🛠️ Tech Stack
+
+[![Tech](https://skillicons.dev/icons?i=react,js,tailwind,firebase,nodejs,express,mongodb,vite&theme=dark)](https://skillicons.dev)
+
+| Layer | Technologies |
+|:------|:-------------|
+| **Frontend** | React 18, React Router, TanStack Query, Tailwind CSS, DaisyUI |
+| **Auth** | Firebase SDK (Email/Password + Google) |
+| **Backend** | Node.js, Express.js |
+| **Database** | MongoDB |
+| **UI/UX** | Swiper.js, SweetAlert2, React Icons, Dark Mode Toggle |
+| **Build** | Vite |
+| **Hosting** | Firebase (Client) · Vercel (Server) |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v16+)
+- npm or yarn
+- Firebase project with Authentication enabled
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/Rezwan66/auto-maniac-client.git
+
+# Navigate to the project
+cd auto-maniac-client
+
+# Install dependencies
 npm install
 ```
 
-#### Configure Environment Variables
+### Environment Variables
 
-You will be needing the environment variables for Firebase SDK before running the project. Please contact me if you need access to the .env.local file.
+Create a `.env.local` file in the root directory with your Firebase configuration:
 
-#### Run the Project
+```env
+VITE_apiKey=your_firebase_api_key
+VITE_authDomain=your_project.firebaseapp.com
+VITE_projectId=your_project_id
+VITE_storageBucket=your_project.appspot.com
+VITE_messagingSenderId=your_sender_id
+VITE_appId=your_app_id
+```
 
-After configuring the environment variables, run this command to start the project.
+### Run Locally
 
 ```bash
 npm run dev
 ```
 
-### Updated Features
+The app will be available at `http://localhost:5173`
 
-- Group animation effect on the brand cards on the Homepage and the product cards on the Brand Products pages.
-- Dark mode text color on My Cart page fixed, and changed dark mode bg color.
+---
 
-### Features & Functionalities
+## 📁 Project Structure
 
-- Click on a logo of _Featured Brands_ in the `Home` page to view all products of that brand in the database.
-- Click on the _Details_ button of the product card to learn about further details about the product.
-- On the product details page, you can add the product to your cart if you want to buy it.
-- Visit the `My Cart` page when you are signed in, to view your selected products in the basket.
-- Go to the `Add Product` page to add a product of a certain brand directly to the database in _MongoDb_.
-- You also have the option to edit a product property by clicking on the _Update_ button on the product card, and updating the information directly to the database.
-- `Register` or `Login` using your email-password or using Google Sign In to use premium functionalities such as adding and editing products, or accessing them in your cart to check out.
-- The backend server is fully functional and hosted online on Vercel so that you can use the Auto Maniac website seamlessly without any problems.
+```
+src/
+├── assets/          # Static assets (images, icons)
+├── components/      # Reusable UI components
+├── firebase/        # Firebase configuration
+├── hooks/           # Custom React hooks
+├── pages/           # Route-level page components
+├── providers/       # Context providers (Auth, Theme)
+├── routes/          # Route definitions & protected routes
+└── utilities/       # Helper functions
+```
 
-### Client Side Live Link:
+---
 
-[Firebase](https://auto-maniac.web.app/) : https://auto-maniac.web.app/
+## 🔗 Related
+
+- **Server Repository:** [auto-maniac-server](https://github.com/Rezwan66/auto-maniac-server)
+- **Live Site:** [auto-maniac.web.app](https://auto-maniac.web.app/)
